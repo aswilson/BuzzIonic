@@ -1,4 +1,4 @@
-angular.module('starter.controllers', [])
+angular.module('starter.controllers', ['ngOpenFB'])
 
 .controller('DashCtrl', function($scope) {})
 
@@ -21,8 +21,20 @@ angular.module('starter.controllers', [])
   $scope.chat = Chats.get($stateParams.chatId);
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope, ngFB) {
   $scope.settings = {
     enableFriends: true
+  };
+  $scope.fbLogin = function () {
+    ngFB.login({scope: 'basic_info, email'}).then(
+        function (response) {
+            if (response.status === 'connected') {
+                console.log('Facebook login succeeded');
+                console.log(response);
+                $scope.closeLogin();
+            } else {
+                alert('Facebook login failed');
+            }
+        });
   };
 });

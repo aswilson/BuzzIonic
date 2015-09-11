@@ -2,8 +2,13 @@
   <ion-content>
     <ion-list>
     <ion-toggle  ng-model="settings.enableFriends">
-        Enable Friends
+        Enable Location Tracking
     </ion-toggle>
     </ion-list>
+    <label class="item">
+    	<button class="button button-block button-positive" ng-click="fbLogin()">
+    		Login with Facebook
+    	</button>
+	</label>
   </ion-content>
 </ion-view>
