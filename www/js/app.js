@@ -89,6 +89,25 @@ angular.module('starter', ['ionic','ionic.service.core','ionic.service.push','ng
       }
     })
 
+    .state('tab.queues', {
+      url: '/queues',
+      views: {
+        'tab-queues': {
+          templateUrl: 'templates/tab-queues.html',
+          controller: 'QueuesCtrl'
+        }
+      }
+    })
+    .state('tab.queue-detail', {
+      url: '/queues/:queueId',
+      views: {
+        'tab-queues': {
+          templateUrl: 'templates/queue-detail.html',
+          controller: 'QueueDetailCtrl'
+        }
+      }
+    })
+
   .state('tab.account', {
     url: '/account',
     views: {

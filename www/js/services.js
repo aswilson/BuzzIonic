@@ -189,3 +189,48 @@ services.factory('Chats', function() {
     }
   };
 });
+
+services.factory('Queues', function() {
+  // Might use a resource here that returns a JSON array
+
+  // Some fake testing data
+  var queues = [{
+    id: 0,
+    name: 'Dad',
+    message: 'You on your way?',
+    type: 'text',
+    time: '9:00 AM',
+    face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
+  }, {
+    id: 1,
+    name: 'Mom',
+    message: 'Reminder to call',
+    type: 'call',
+    time: '5:00 PM',
+    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
+  }, {
+    id: 2,
+    name: 'Sammi',
+    message: 'Alert when available',
+    type: 'alert',
+    time: '',
+    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
+  }];
+
+  return {
+    all: function() {
+      return queues;
+    },
+    remove: function(queue) {
+      queues.splice(queues.indexOf(queue), 1);
+    },
+    get: function(queueId) {
+      for (var i = 0; i < queues.length; i++) {
+        if (queues[i].id === parseInt(queueId)) {
+          return queues[i];
+        }
+      }
+      return null;
+    }
+  };
+});
