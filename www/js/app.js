@@ -39,6 +39,25 @@ angular.module('starter', ['ionic','ionic.service.core','ionic.service.push','ng
   })
 
   // Each tab has its own nav history stack:
+  .state('tab.favorites', {
+    url: '/favorites',
+    views: {
+      'tab-favorites': {
+        templateUrl: 'templates/tab-favorites.html',
+        controller: 'FavoritesCtrl'
+      }
+    }
+  })
+
+  .state('tab.contacts', {
+    url: '/contacts',
+    views: {
+      'tab-contacts': {
+        templateUrl: 'templates/tab-contacts.html',
+        controller: 'ContactsCtrl'
+      }
+    }
+  })
 
   .state('tab.dash', {
     url: '/dash',
@@ -59,6 +78,7 @@ angular.module('starter', ['ionic','ionic.service.core','ionic.service.push','ng
         }
       }
     })
+  
     .state('tab.chat-detail', {
       url: '/chats/:chatId',
       views: {
@@ -99,6 +119,6 @@ angular.module('starter', ['ionic','ionic.service.core','ionic.service.push','ng
   });
 
   // if none of the above states are matched, use this as the fallback
-  $urlRouterProvider.otherwise('/tab/dash');
+  $urlRouterProvider.otherwise('/tab/contacts');
 
 });
