@@ -5,10 +5,20 @@
         Enable Location Tracking
     </ion-toggle>
     </ion-list>
-    <label class="item">
+    <label class="item" ng-if="response.status !== 'connected'">
     	<button class="button button-block button-positive" ng-click="fbLogin()">
     		Login with Facebook
     	</button>
 	</label>
-  </ion-content>
+        <div class="list card" ng-if="response.status === 'connected'">
+        	<ul class="list">
+		      <li class="item item-avatar item-icon-right contact-item" type="item-text-wrap">
+		        <img ng-src="http://graph.facebook.com/{{user.id}}/picture?width=270&height=270">
+		        <h2>{{user.name}}</h2>
+		        <p><strong>5:09 PM</strong> &nbsp; {{contact.city}}</p>
+               <i class="icon ion-record icon-available" ></i>
+		      </li>
+		    </ul>
+        </div>
+    </ion-content>
 </ion-view>

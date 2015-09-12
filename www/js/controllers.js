@@ -31,10 +31,38 @@ angular.module('starter.controllers', ['ngOpenFB'])
             if (response.status === 'connected') {
                 console.log('Facebook login succeeded');
                 console.log(response);
-                $scope.closeLogin();
+                 ngFB.api({
+                      path: '/me',
+                      params: {fields: 'id,name'}
+                  }).then(
+                      function (user) {
+                          $scope.user = user;
+                          $scope.response = response;
+                          // var date = new Date();
+                          // // var current_hour = date.format("HH:mm").toString();
+                          // var appDate = $filter('date')(app.date, "dd/MM/yyyy");
+                          // $scope.appDate = appDate;
+                      },
+                      function (error) {
+                          alert('Facebook error: ' + error.error_description);
+                       });
+                // $scope.closeLogin();
             } else {
                 alert('Facebook login failed');
             }
         });
   };
 });
+
+// .controller('ProfileCtrl', function ($scope, ngFB) {
+//     ngFB.api({
+//         path: '/me',
+//         params: {fields: 'id,name'}
+//     }).then(
+//         function (user) {
+//             $scope.user = user;
+//         },
+//         function (error) {
+//             alert('Facebook error: ' + error.error_description);
+//         });
+// });
