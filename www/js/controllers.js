@@ -36,12 +36,24 @@ angular.module('starter.controllers', [])
   };
 })
 
+.controller('PopupCtrl',function($scope, $ionicPopup, $timeout) {
+ $scope.showAlert = function() {
+     var alertPopup = $ionicPopup.alert({
+       title: 'Alert',
+       template: 'Sammi has now become available'
+     });
+     alertPopup.then(function(res) {
+      Queues.remove(queues[2])
+     });
+   };
+  })
+
 .controller('QueueDetailCtrl', function($scope, $stateParams, Queues) {
   $scope.queue = Queues.get($stateParams.queueId);
   $scope.remove = function(queue) {
     Queues.remove(queue);
   };
-  
+
 })
 
 .controller('AccountCtrl', function($scope) {
