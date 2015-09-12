@@ -11,8 +11,8 @@
           </div>
         <div class="col">
           <span class="item-note">
-            <h3 ng-if="queue.type === 'call'">Remind at {{queue.time}}</h3>
-            <h3 ng-if="queue.type === 'text'">Send at {{queue.name}}'s {{queue.time}} </h3>
+            <h3 ng-if="queue.type === 'call'">Remind at {{queue.time | date:"h':'mm' 'a"}}</h3>
+            <h3 ng-if="queue.type === 'text'">Send at {{queue.name}}'s {{queue.time | date:"h':'mm' 'a"}} </h3>
           </span>
     </div>
     </div>

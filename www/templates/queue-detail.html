@@ -6,9 +6,21 @@
 -->
 <ion-view view-title="{{queue.name}}">
   <ion-content class="padding">
-    <img ng-src="{{queue.face}}" style="width: 64px; height: 64px">
-    <p>
-      {{queue.message}}
-    </p>
+  <div ng-if="queue.type === 'text'">
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Message</span>
+      <input type="text" ng-model="queue.message" value="{{queue.message}}">
+    </label>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Will be sent at:</span>
+      <input type="time" ng-model="queue.time" value="{{queue.time}}">
+    </label>
+  </div>
+  <div ng-if="queue.type === 'call'">
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Reminder set for:</span>
+      <input type="time" ng-model="queue.time" value="{{queue.time}}">
+    </label>
+  </div>
   </ion-content>
 </ion-view>
