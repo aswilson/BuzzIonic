@@ -1,8 +1,9 @@
-<ion-view view-title="Queues">
+<ion-view view-title="Queue">
   <ion-content>
     <ion-list>
-      <ion-item class="item-remove-animate item-avatar item-icon-right" ng-repeat="queue in queues" type="item-text-wrap" href="#/tab/queues/{{queue.id}}">
-        <img ng-src="{{queue.face}}">
+      <ion-item class="item-remove-animate item-icon-left item-icon-right" ng-repeat="queue in queues" type="item-text-wrap" href="#/tab/queues/{{queue.id}}">
+        <i class="icon ion-ios-telephone-outline" ng-if="queue.type === 'call'"></i>
+         <i class="icon ion-chatbubble" ng-if="queue.type === 'text'"></i>
         <h2>{{queue.name}}</h2>
         <p>{{queue.message}}</p>
         <i class="icon ion-chevron-right icon-accessory"></i>
