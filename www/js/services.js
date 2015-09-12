@@ -67,6 +67,13 @@ services.factory('Queues', function() {
     type: 'call',
     time: '5pm',
     face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
+  }, {
+    id: 2,
+    name: 'Sammi',
+    message: 'Alert when available',
+    type: 'alert',
+    time: '',
+    face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
   }];
 
   return {

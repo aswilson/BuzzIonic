@@ -38,6 +38,9 @@ angular.module('starter.controllers', [])
 
 .controller('QueueDetailCtrl', function($scope, $stateParams, Queues) {
   $scope.queue = Queues.get($stateParams.queueId);
+  $scope.remove = function(queue) {
+    Queues.remove(queue);
+  };
 })
 
 .controller('AccountCtrl', function($scope) {
