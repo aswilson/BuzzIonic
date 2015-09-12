@@ -41,6 +41,7 @@ angular.module('starter.controllers', [])
   $scope.remove = function(queue) {
     Queues.remove(queue);
   };
+  
 })
 
 .controller('AccountCtrl', function($scope) {

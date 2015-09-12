@@ -15,23 +15,32 @@
       <span class="input-label">Will be sent at:</span>
       <input type="time" ng-model="queue.time" value="{{queue.time}}">
     </label>
-    <ion-option-button class="button-full button-assertive" ng-click="remove(queue)">
-        Cancel Message
-  </ion-option-button>
+    <button class="button button-block button-positive" ui-sref="tab.queues">
+    Save
+    </button>
+    <button class="button button-block button-assertive" ng-click="remove(queue)" ui-sref="tab.queues">
+    Cancel Message
+    </button>
   </div>
   <div ng-if="queue.type === 'call'">
     <label class="item item-input item-stacked-label">
       <span class="input-label">Reminder set for:</span>
       <input type="time" ng-model="queue.time" value="{{queue.time}}">
     </label>
-    <ion-option-button class="button-full button-assertive" ng-click="remove(queue)">
-        Cancel Reminder
-  </ion-option-button>
+    <button class="button button-block button-positive" ui-sref="tab.queues">
+    Save
+    </button>
+    <button class="button button-block button-assertive" ng-click="remove(queue)" ui-sref="tab.queues">
+    Cancel Reminder
+    </button>
   </div>
   <div ng-if="queue.type === 'alert'">
-    <ion-option-button class="button-full button-assertive" ng-click="remove(queue)">
-        Cancel Alert
-  </ion-option-button>
+    <button class="button button-block button-positive" ui-sref="tab.queues">
+    Back
+    </button>
+    <button class="button button-block button-assertive" ng-click="remove(queue)" ui-sref="tab.queues">
+    Cancel Alert
+    </button>
   </div>
-  </ion-content>
+</ion-content>
 </ion-view>
