@@ -1,0 +1,46 @@
+<!--
+  This template loads for the 'tab.friend-detail' state (app.js)
+  'friend' is a $scope variable created in the FriendsCtrl controller (controllers.js)
+  The FriendsCtrl pulls data from the Friends service (service.js)
+  The Friends service returns an array of friend data
+-->
+<ion-view view-title="{{queue.name}}">
+  <ion-content class="padding">
+  <div ng-if="queue.type === 'text'">
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Message</span>
+      <input type="text" ng-model="queue.message" value="{{queue.message}}">
+    </label>
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Will be sent at:</span>
+      <input type="time" ng-model="queue.time" value="{{queue.time}}">
+    </label>
+    <button class="button button-block button-positive" ui-sref="tab.queues">
+    Save
+    </button>
+    <button class="button button-block button-assertive" ng-click="remove(queue)" ui-sref="tab.queues">
+    Cancel Message
+    </button>
+  </div>
+  <div ng-if="queue.type === 'call'">
+    <label class="item item-input item-stacked-label">
+      <span class="input-label">Reminder set for:</span>
+      <input type="time" ng-model="queue.time" value="{{queue.time}}">
+    </label>
+    <button class="button button-block button-positive" ui-sref="tab.queues">
+    Save
+    </button>
+    <button class="button button-block button-assertive" ng-click="remove(queue)" ui-sref="tab.queues">
+    Cancel Reminder
+    </button>
+  </div>
+  <div ng-if="queue.type === 'alert'">
+    <button class="button button-block button-positive" ui-sref="tab.queues">
+    Back
+    </button>
+    <button class="button button-block button-assertive" ng-click="remove(queue)" ui-sref="tab.queues">
+    Cancel Alert
+    </button>
+  </div>
+</ion-content>
+</ion-view>
