@@ -1,11 +1,140 @@
 angular.module('starter.controllers', [])
 
-.controller('FavoritesCtrl', function($scope, Contacts) {
+.controller('FavoritesCtrl', function($scope, $ionicPopup, $timeout, Contacts) {
+  //Get all favorite contacts
   $scope.favorites = Contacts.favorite();
+
+  $scope.data = {}
+
+  // Triggered on a button click, or some other target
+  $scope.showUnavailableCallPopup = function() {
+    var noCallPopup = $ionicPopup.confirm({
+      title: 'This contact is busy',
+      template: 'Call at another time?',
+      cancelText:'Notify to Call',
+      okText:'Call Now'
+    });
+    noCallPopup.then(function(res) {
+      if(res) {
+       console.log('Call Now');
+     } else {
+       console.log('Call Later');
+     }
+    });
+  };
+
+    $scope.showAvailableCallPopup = function() {
+    var callPopup = $ionicPopup.show({
+      title: 'Calling...'
+    });
+    callPopup.then(function(res) {
+      console.log('Tapped!', res);
+    });
+    $timeout(function() {
+       callPopup.close(); //close the popup after 3 seconds for some reason
+    }, 3000);
+  };
+
+  // Triggered on a button click, or some other target
+  $scope.showUnavailableMessagePopup = function() {
+    var noMessgePopup = $ionicPopup.show({
+      title: 'Your contact is busy',
+      subTitle: 'Type your message',
+      template: '<input type="text">',
+      buttons: [{text:'Queue Message'}, {text:'Send Now'}]
+    });
+    noMessagePopup.then(function(res) {
+      if(res) {
+       console.log('Queue Message');
+     } else {
+       console.log('Send Now');
+     }
+    });
+  };
+
+    $scope.showAvailableMessagePopup = function() {
+    var messgePopup = $ionicPopup.show({
+      title: 'Your contact is available',
+      subTitle: 'Type your message',
+      template: '<input type="text">',
+      buttons: [{text:'Cancel'}, {text:'Send', type:'button-positive'}]
+    });
+    messagePopup.then(function(res) {
+      if(res) {
+       console.log('Queue Message');
+     } else {
+       console.log('Send Now');
+     }
+    });
+  };
 })
 
-.controller('ContactsCtrl', function($scope, Contacts) {
+.controller('ContactsCtrl', function($scope, $ionicPopup, $timeout, Contacts) {
   $scope.contacts = Contacts.alphabetical();
+
+  $scope.data = {}
+
+  // Triggered on a button click, or some other target
+  $scope.showUnavailableCallPopup = function() {
+    var noCallPopup = $ionicPopup.confirm({
+      title: 'This contact is busy',
+      template: 'Call at another time?',
+      cancelText:'Notify to Call',
+      okText:'Call Now'
+    });
+    noCallPopup.then(function(res) {
+      if(res) {
+       console.log('Call Now');
+     } else {
+       console.log('Call Later');
+     }
+    });
+  };
+
+    $scope.showAvailableCallPopup = function() {
+    var callPopup = $ionicPopup.show({
+      title: 'Calling...'
+    });
+    callPopup.then(function(res) {
+      console.log('Tapped!', res);
+    });
+    $timeout(function() {
+       callPopup.close(); //close the popup after 3 seconds for some reason
+    }, 3000);
+  };
+
+  // Triggered on a button click, or some other target
+  $scope.showUnavailableMessagePopup = function() {
+    var noMessgePopup = $ionicPopup.show({
+      title: 'Your contact is busy',
+      subTitle: 'Type your message',
+      template: '<input type="text">',
+      buttons: [{text:'Queue Message'}, {text:'Send Now'}]
+    });
+    noMessagePopup.then(function(res) {
+      if(res) {
+       console.log('Queue Message');
+     } else {
+       console.log('Send Now');
+     }
+    });
+  };
+
+    $scope.showAvailableMessagePopup = function() {
+    var messgePopup = $ionicPopup.show({
+      title: 'Your contact is available',
+      subTitle: 'Type your message',
+      template: '<input type="text">',
+      buttons: [{text:'Cancel'}, {text:'Send', type:'button-positive'}]
+    });
+    messagePopup.then(function(res) {
+      if(res) {
+       console.log('Queue Message');
+     } else {
+       console.log('Send Now');
+     }
+    });
+  };
 })
 
 .controller('DashCtrl', function($scope) {})

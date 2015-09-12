@@ -1,6 +1,10 @@
 /* Empty. Add your own CSS if you like */
+.icon-first{
+  right:0px !important;
+}
+
 .icon-second{
-  right:50px !important;
+  right:40px !important;
 }
 
 .icon-apple-blue{
