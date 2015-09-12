@@ -58,14 +58,14 @@ services.factory('Queues', function() {
     name: 'Dad',
     message: 'You on your way?',
     type: 'text',
-    time: '9am',
+    time: '9:00 AM',
     face: 'https://pbs.twimg.com/profile_images/514549811765211136/9SgAuHeY.png'
   }, {
     id: 1,
     name: 'Mom',
     message: 'Reminder to call',
     type: 'call',
-    time: '5pm',
+    time: '5:00 PM',
     face: 'https://avatars3.githubusercontent.com/u/11214?v=3&s=460'
   }, {
     id: 2,
