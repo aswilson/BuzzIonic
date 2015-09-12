@@ -1,1 +1,20 @@
 /* Empty. Add your own CSS if you like */
+.icon-second{
+  right:50px !important;
+}
+
+.icon-apple-blue{
+  color:#037AFF;
+}
+
+.icon-available{
+  right: 90px !important;
+  font-size: 17px !important;
+  color: #7ED321
+}
+
+.icon-unavailable{
+  right: 90px !important;
+  font-size: 17px !important;
+  color: #E74C3C
+}

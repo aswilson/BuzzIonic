@@ -1,5 +1,13 @@
 angular.module('starter.controllers', [])
 
+.controller('FavoritesCtrl', function($scope, Contacts) {
+  $scope.favorites = Contacts.favorite();
+})
+
+.controller('ContactsCtrl', function($scope, Contacts) {
+  $scope.contacts = Contacts.alphabetical();
+})
+
 .controller('DashCtrl', function($scope) {})
 
 .controller('ChatsCtrl', function($scope, Chats) {

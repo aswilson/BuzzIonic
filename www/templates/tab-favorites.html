@@ -1,0 +1,15 @@
+<ion-view view-title="Favorites">
+  <ion-content>
+    <ul class="list">
+      <li class="item item-avatar item-icon-right contact-item" ng-repeat="contact in favorites" type="item-text-wrap">
+        <img ng-src="{{contact.face}}">
+        <h2>{{contact.name}}</h2>
+        <p><strong>{{contact.time}}</strong> &nbsp; {{contact.location}}</p>
+        <i class="icon ion-record icon-available" ng-if="contact.available === true"></i>
+        <i class="icon ion-record icon-unavailable" ng-if="contact.available === false"></i>
+        <i class="icon ion-ios-chatbubble-outline icon-second icon-apple-blue"></i>
+        <i class="icon ion-ios-telephone-outline icon-apple-blue"></i>
+      </li>
+    </ul>
+  </ion-content>
+</ion-view>
