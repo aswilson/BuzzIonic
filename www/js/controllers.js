@@ -109,7 +109,7 @@ angular.module('starter.controllers', ['ngOpenFB'])
       title: 'Your contact is busy',
       subTitle: 'Type your message',
       template: '<input type="text">',
-      buttons: [{text:'Queue Message'}, {text:'Send Now'}]
+      buttons: [{text:'Queue Message'}, {text:'Send Now', type:'button-positive'}]
     });
     noMessagePopup.then(function(res) {
       if(res) {
