@@ -5,15 +5,24 @@
         Enable Location Tracking
     </ion-toggle>
     </ion-list>
-        <div class="card">
-            <div class="item item-divider">
-                UnAvailablility Preferences
-            </div>
-    <label class="item item-input item-stacked-label">
-      <span class="input-label">I am Unavailable from:</span>
-      <input type="time" placeholder="08:00 AM"></input> to <input type="time" placeholder="08:00 AM"></input>
-    </label>
+    <div class="card">
+        <div class="item item-divider">
+            Availablility Preferences
         </div>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">I usually sleep from:</span> <input type="time" placeholder="08:00 AM"></input>
+        </label>
+        <label class="item item-input item-stacked-label">
+          to <input type="time" placeholder="08:00 AM"></input>
+        </label>
+        <label class="item item-input item-stacked-label">
+          <span class="input-label">I'm at work from:</span>
+          <input type="time" placeholder="08:00 AM"></input>
+        </label>
+        <label class="item item-input item-stacked-label">
+          to <input type="time" placeholder="08:00 AM"></input>
+        </label>
+    </div>
     <label class="item" ng-if="response.status !== 'connected'">
     	<button class="button button-block button-positive" ng-click="fbLogin()">
     		Login with Facebook
